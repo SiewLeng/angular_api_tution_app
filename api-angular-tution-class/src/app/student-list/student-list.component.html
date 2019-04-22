@@ -1,0 +1,18 @@
+<p class="invisible"> List </p>
+<h3> List of Students </h3>
+<table  class="table table-striped table-responsive-md btn-table">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElement" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let student of globals.students; let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{student.name}}</td>
+      <td>{{student.age}}</td>
+      <td> <a routerLink="/updateStudent/{{student.id}}"> Edit</a> </td>
+      <td> <button (click)="deleteStudent(student)"> Delete </button> </td>
+    </tr>
+  </tbody>
+</table>

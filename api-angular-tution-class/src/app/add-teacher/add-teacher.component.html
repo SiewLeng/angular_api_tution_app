@@ -1,0 +1,27 @@
+<h3> Add A Teacher </h3>
+<form #teacherForm="ngForm">
+  <div class="form-row">
+    <div class="form-group  col-md-3">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"
+          required
+          [(ngModel)]="teacher.name" name="name">
+    </div>
+    <div class="form-group  col-md-3">
+      <label for="name">Age</label>
+      <input type="text" class="form-control" id="age"
+          required
+          [(ngModel)]="teacher.age" name="age">
+    </div>
+    <div class="form-group  col-md-3">
+      <label for="name">Subject</label>
+      <input type="text" class="form-control" id="subject"
+          required
+          [(ngModel)]="teacher.subject" name="subject">
+    </div>
+    <div class="form-group col-md-3">
+      <br/>
+      <button (click)= "onSubmit(teacherForm)" class="btn btn-success" [disabled]="!teacherForm.form.valid">Submit</button>
+    </div>
+  </div>
+</form>

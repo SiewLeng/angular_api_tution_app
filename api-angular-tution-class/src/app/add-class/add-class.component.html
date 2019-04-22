@@ -1,0 +1,25 @@
+<h3>Add A Class</h3>
+<form #classForm="ngForm">
+  <div class="form-row">
+    <div class="form-group  col-md-4">
+      <label for="name">Name of Class </label>
+      <input type="text" class="form-control" id="name"
+          required
+          [(ngModel)]="class.name" name="name">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="teacher">Select A Teacher </label>
+      <select class="form-control"  id="teacherId"
+              required
+              [(ngModel)]="class.teacherId" name="teacherId">
+        <option *ngFor="let teacher of teachers" [value]="teacher.id">
+          Name: {{teacher.name}}, Subject: {{teacher.subject}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <br/>
+      <button (click)= "onSubmit(classForm)" class="btn btn-success" [disabled]="!classForm.form.valid">Submit</button>
+    </div>
+  </div>
+</form>
